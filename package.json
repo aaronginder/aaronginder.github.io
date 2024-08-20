@@ -1,0 +1,31 @@
+{
+  "name": "aaronginder.github.io",
+  "version": "1.0.0",
+  "description": "Personal website for my portfolio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronginder/aaronginder.github.io.git"
+  },
+  "author": "Aaron Ginder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronginder/aaronginder.github.io/issues"
+  },
+  "homepage": "https://github.com/aaronginder/aaronginder.github.io#readme",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.1.6",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.1",
+    "gh-pages": "^6.1.1",
+    "husky": "^9.1.4",
+    "semantic-release": "^24.1.0",
+    "standard-version": "^9.5.0"
+  }
+}
