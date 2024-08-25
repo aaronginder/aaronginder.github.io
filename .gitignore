@@ -140,3 +140,4 @@ app.*.symbols
 
 # Custom
 .old/
+software_portfolio/
