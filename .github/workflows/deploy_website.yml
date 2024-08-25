@@ -11,6 +11,11 @@ on:
         description: 'Directory to the app folder containing the website'
         required: true
         default: 'latest'
+  push:
+    branches:
+    - main
+    - alpha
+    - beta
 
 jobs:
   build-and-deploy:
