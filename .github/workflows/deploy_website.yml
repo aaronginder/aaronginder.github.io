@@ -33,7 +33,9 @@ jobs:
         flutter pub get
 
     - name: Build the Flutter web app
-      run: flutter build web --release
+      run: |
+        cd ${{ github.event.inputs.app_dir }}
+        flutter build web --release
 
     - name: Deploy Website to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
