@@ -10,7 +10,7 @@ on:
       app_dir:
         description: 'Directory to the app folder containing the website'
         required: true
-        default: 'latest'
+        default: 'devfolio'
 
 jobs:
   build-and-deploy:
@@ -25,19 +25,21 @@ jobs:
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: 'stable'
+        flutter-version: '3.24.0'
 
     - name: Install dependencies
       run: |
-        cd ${{ github.event.inputs.tag_name }}
+        cd ${{ github.event.inputs.app_dir }}
         flutter pub get
 
     - name: Build the Flutter web app
-      run: flutter build web --release
+      run: |
+        cd ${{ github.event.inputs.app_dir }}
+        flutter build web --release
 
     - name: Deploy Website to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ${{ github.event.inputs.tag_name }}/build/web/
-        cname: aaronginder.github.io
+        publish_dir: ${{ github.event.inputs.app_dir }}/build/web/
+        # cname: aaronginder.github.io
