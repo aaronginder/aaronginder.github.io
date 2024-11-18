@@ -86,6 +86,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: src/build/web  # Adjusted for the src/ directory
           allow_empty_commit: false  # Typically not needed
+          publish_branch: gh-pages
+          enable_jekyll: false
 
   # Job to report build status
   report-status:
