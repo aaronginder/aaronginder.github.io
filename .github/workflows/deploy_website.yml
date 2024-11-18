@@ -60,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: flutter-web-build
-          path: build/web
+          path: src/build/web
 
   # Job to deploy to GitHub Pages
   deploy:
@@ -77,6 +77,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: flutter-web-build
+          path: src/build/web
 
       # Step to deploy to GitHub Pages using Jekyll
       - name: Deploy to GitHub Pages
