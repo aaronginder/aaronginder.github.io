@@ -22,10 +22,11 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 'stable'
+          flutter-version: '3.24.5'
 
       # Step to run Flutter tests
       - name: Run Flutter tests
+        working-directory: src
         run: flutter test
 
   # Job to build the Flutter web app
@@ -42,14 +43,16 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 'stable'
+          flutter-version: '3.24.5'
 
       # Step to install dependencies
       - name: Install dependencies
+        working-directory: src
         run: flutter pub get
 
       # Step to build the Flutter web app
       - name: Build Flutter web app
+        working-directory: src
         run: flutter build web
 
       # Step to upload build artifacts
@@ -80,9 +83,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build/web
-          allow_empty_commit: true
-          jekyll: true
+          publish_dir: src/build/web  # Adjusted for the src/ directory
+          allow_empty_commit: false  # Typically not needed
 
   # Job to report build status
   report-status:
