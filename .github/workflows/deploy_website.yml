@@ -10,7 +10,7 @@ on:
       app_dir:
         description: 'Directory to the app folder containing the website'
         required: true
-        default: 'devfolio'
+        default: 'src'
 
 jobs:
   build-and-deploy:
