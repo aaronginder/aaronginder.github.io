@@ -105,6 +105,8 @@ jobs:
   report-status:
     runs-on: ubuntu-latest
     needs: deploy  # Depends on the deploy job
+    env:
+      GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
 
     steps:
       # Step to post telemetry data
