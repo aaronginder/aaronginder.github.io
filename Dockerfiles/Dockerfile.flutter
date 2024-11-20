@@ -1,0 +1,48 @@
+# Use an official lightweight base image
+FROM debian:bullseye-slim
+
+# Metadata for the image
+LABEL maintainer="aaronginder@hotmail.co.uk"
+LABEL version="3.24.5"
+LABEL description="Docker image with Flutter 3.24.5 installed"
+
+# Set environment variables for Flutter
+ENV FLUTTER_VERSION=3.24.5 \
+    FLUTTER_HOME=/usr/local/flutter \
+    PATH=$PATH:/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin
+
+# Update and install required dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    git \
+    unzip \
+    xz-utils \
+    zip \
+    libglu1-mesa \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Download and install Flutter
+RUN curl -o flutter.tar.xz -L https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz && \
+    mkdir -p ${FLUTTER_HOME} && \
+    tar -xJf flutter.tar.xz -C /usr/local/ && \
+    rm flutter.tar.xz
+
+# Pre-cache Flutter dependencies
+RUN flutter precache
+
+# Verify Flutter installation
+RUN flutter doctor -v
+
+# Add additional metadata
+LABEL org.opencontainers.image.title="Flutter Docker Image"
+LABEL org.opencontainers.image.description="Docker image with Flutter 3.24.5 installed"
+LABEL org.opencontainers.image.version="3.24.5"
+LABEL org.opencontainers.image.url="https://flutter.dev/"
+LABEL org.opencontainers.image.source="https://github.com/flutter/flutter"
+
+# Set default working directory
+WORKDIR /app
+
+# Set entrypoint to Flutter CLI
+ENTRYPOINT ["flutter"]
