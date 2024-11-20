@@ -1,4 +1,4 @@
-name: pages-deploy-deployment
+name: pages-build-deployment
 
 on:
   # Runs on pushes targeting the default branch

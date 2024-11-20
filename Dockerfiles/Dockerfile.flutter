@@ -13,6 +13,7 @@ ENV FLUTTER_VERSION=3.24.5 \
 
 # Update and install required dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    bash \
     curl \
     git \
     unzip \
@@ -26,13 +27,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN curl -o flutter.tar.xz -L https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_${FLUTTER_VERSION}-stable.tar.xz && \
     mkdir -p ${FLUTTER_HOME} && \
     tar -xJf flutter.tar.xz -C /usr/local/ && \
-    rm flutter.tar.xz
+    rm flutter.tar.xz && \
+    chown -R root:root ${FLUTTER_HOME}
 
 # Pre-cache Flutter dependencies
-RUN flutter precache
+RUN flutter precache --web --linux
 
 # Verify Flutter installation
-RUN flutter doctor -v
+RUN flutter doctor -v || { echo "Flutter installation failed"; exit 1; }
 
 # Add additional metadata
 LABEL org.opencontainers.image.title="Flutter Docker Image"
@@ -46,3 +48,4 @@ WORKDIR /app
 
 # Set entrypoint to Flutter CLI
 ENTRYPOINT ["flutter"]
+CMD ["--help"]
