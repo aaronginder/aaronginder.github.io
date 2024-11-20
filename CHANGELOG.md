@@ -1,3 +1,11 @@
+# [1.0.0-alpha.4](https://github.com/aaronginder/aaronginder.github.io/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2024-11-20)
+
+
+### Bug Fixes
+
+* remove set up flutter step in test_workflow ([552472e](https://github.com/aaronginder/aaronginder.github.io/commit/552472e375bc2656d34dbc279f07c5d15ba54505))
+* setup node step in release ([e50f24f](https://github.com/aaronginder/aaronginder.github.io/commit/e50f24fa1e3915bcca7ccb0fb63227ab094e2e54))
+
 # [1.0.0-alpha.3](https://github.com/aaronginder/aaronginder.github.io/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2024-11-19)
 
 
