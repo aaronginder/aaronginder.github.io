@@ -24,6 +24,8 @@ jobs:
   # Job to run Flutter tests
   unittest:
     runs-on: ubuntu-latest
+    container: 
+      image: ghcr.io/aaronginder/flutter:3.24.5
 
     steps:
       # Step to check out the repository

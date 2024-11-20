@@ -35,12 +35,12 @@ jobs:
       id-token: write
     name: release
     runs-on: ubuntu-latest
+    container: 
+      image: ghcr.io/aaronginder/semantic-release:10.8.2
+      options: --user root
+
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          cache: npm
-          node-version: lts/*
       - run: npm ci
       - run: corepack npm audit signatures
       - run: |
