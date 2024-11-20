@@ -4,7 +4,22 @@ import 'package:portfolio/constants/styles.dart';
 import 'package:portfolio/widgets/glass_content.dart';
 
 class WebBanner extends StatelessWidget {
-  const WebBanner({super.key});
+  // Set global keys for navigation purposes
+  final GlobalKey homeKey;
+  final GlobalKey aboutKey;
+  final GlobalKey servicesKey;
+  final GlobalKey portfolioKey;
+  final GlobalKey testimonialKey;
+  final GlobalKey contactKey;
+
+  const WebBanner(
+      {super.key,
+      required this.homeKey,
+      required this.aboutKey,
+      required this.servicesKey,
+      required this.portfolioKey,
+      required this.testimonialKey,
+      required this.contactKey});
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +28,8 @@ class WebBanner extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       constraints: const BoxConstraints(
-        maxHeight: 900,
-        minHeight: 700,
+        maxHeight: 200,
+        minHeight: 150,
       ),
       width: double.infinity,
       decoration: const BoxDecoration(
@@ -29,10 +44,17 @@ class WebBanner extends StatelessWidget {
         child: Stack(
           children: [
             LogoAndBlurBox(size: size),
-            // const PersonHeader(),  // Removed as I need to find an appropriate image
+            // const PersonHeader(), // Removed as I need to find an appropriate image
             Positioned(
               bottom: 0, // Move to bottom of container
-              child: Menu(),
+              child: Menu(
+                homeKey: homeKey,
+                aboutKey: aboutKey,
+                contactKey: contactKey,
+                portfolioKey: portfolioKey,
+                servicesKey: servicesKey,
+                testimonialKey: testimonialKey,
+              ),
             )
           ],
         ),

@@ -58,7 +58,7 @@ class _ContactFormState extends State<ContactForm> {
     }) async {
       final Uri emailUri = Uri(
         scheme: 'mailto',
-        path: 'aaron.ginder@bt.com',
+        path: 'aaronginder@hotmail.co.uk',
         queryParameters: {
           'subject': reason,
           'body': 'Name: $name\nEmail: $email\n\nDescription:\n$body',

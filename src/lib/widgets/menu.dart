@@ -2,6 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
 
 class Menu extends StatefulWidget {
+  // Set global keys for navigation purposes
+  final GlobalKey homeKey;
+  final GlobalKey aboutKey;
+  final GlobalKey servicesKey;
+  final GlobalKey portfolioKey;
+  final GlobalKey testimonialKey;
+  final GlobalKey contactKey;
+
+  const Menu({
+    required this.homeKey,
+    required this.aboutKey,
+    required this.servicesKey,
+    required this.portfolioKey,
+    required this.testimonialKey,
+    required this.contactKey,
+    super.key,
+  });
+
   @override
   State<Menu> createState() => _MenuState();
 }
@@ -23,8 +41,11 @@ class _MenuState extends State<Menu> {
     // Function that scrolls to a section based on the context of what was selected
     final context = key.currentContext;
     if (context != null) {
-      Scrollable.ensureVisible(context,
-          duration: const Duration(seconds: 1), curve: Curves.easeInOut);
+      Scrollable.ensureVisible(
+        context,
+        duration: const Duration(seconds: 1),
+        curve: Curves.easeInOut,
+      );
     }
   }
 
@@ -78,22 +99,22 @@ class _MenuState extends State<Menu> {
             // Navigation logic to move to the correct global key
             switch (index) {
               case 0:
-                _scrollToSection(homeKey);
+                _scrollToSection(widget.homeKey);
                 break;
               case 1:
-                _scrollToSection(aboutKey);
+                _scrollToSection(widget.aboutKey);
                 break;
               case 2:
-                _scrollToSection(servicesKey);
+                _scrollToSection(widget.servicesKey);
                 break;
               case 3:
-                _scrollToSection(portfolioKey);
+                _scrollToSection(widget.portfolioKey);
                 break;
               case 4:
-                _scrollToSection(testimonialKey);
+                _scrollToSection(widget.testimonialKey);
                 break;
               case 5:
-                _scrollToSection(contactKey);
+                _scrollToSection(widget.contactKey);
                 break;
             }
             selectedIndex = index;

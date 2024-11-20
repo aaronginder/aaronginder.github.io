@@ -13,22 +13,47 @@ class HomeScreen extends StatelessWidget {
   /// in this module and subsequent transitions to accommodate for the screen
   /// size constraints.
 
-  const HomeScreen({super.key});
+  // Set global keys for navigation purposes
+  final GlobalKey homeKey;
+  final GlobalKey aboutKey;
+  final GlobalKey servicesKey;
+  final GlobalKey portfolioKey;
+  final GlobalKey testimonialKey;
+  final GlobalKey contactKey;
+
+  const HomeScreen({
+    super.key,
+    required this.homeKey,
+    required this.aboutKey,
+    required this.servicesKey,
+    required this.portfolioKey,
+    required this.testimonialKey,
+    required this.contactKey,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            WebBanner(),
+            Container(
+                key: homeKey,
+                child: WebBanner(
+                  homeKey: homeKey,
+                  aboutKey: aboutKey,
+                  servicesKey: servicesKey,
+                  portfolioKey: portfolioKey,
+                  testimonialKey: testimonialKey,
+                  contactKey: contactKey,
+                )),
             SizedBox(height: kDefaultPadding * 2),
-            AboutSection(),
-            ServiceSection(),
-            RecentSection(),
-            FeedbackSection(),
+            Container(key: aboutKey, child: AboutSection()),
+            Container(key: servicesKey, child: ServiceSection()),
+            Container(key: portfolioKey, child: RecentSection()),
+            Container(key: testimonialKey, child: FeedbackSection()),
             SizedBox(height: kDefaultPadding),
-            ContactSection(),
+            Container(key: contactKey, child: ContactSection()),
           ],
         ),
       ),

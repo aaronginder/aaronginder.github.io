@@ -13,14 +13,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Portfolio',
+      title: 'Aaron Ginder Portfolio',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         inputDecorationTheme: kDefaultInputDecorationTheme,
         useMaterial3: true,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const HomeScreen(),
+      home: HomeScreen(
+        homeKey: GlobalKey(),
+        aboutKey: GlobalKey(),
+        portfolioKey: GlobalKey(),
+        servicesKey: GlobalKey(),
+        testimonialKey: GlobalKey(),
+        contactKey: GlobalKey(),
+      ),
     );
   }
 }
