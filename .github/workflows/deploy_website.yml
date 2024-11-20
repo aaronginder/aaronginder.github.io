@@ -51,6 +51,7 @@ jobs:
           else
             npx semantic-release --branch ${{ github.head_ref }}
           fi
+        shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
