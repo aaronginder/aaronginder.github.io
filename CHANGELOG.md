@@ -1,3 +1,10 @@
+# [1.0.0-alpha.3](https://github.com/aaronginder/aaronginder.github.io/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2024-11-19)
+
+
+### Bug Fixes
+
+* add semantic release into deploy job ([13c9105](https://github.com/aaronginder/aaronginder.github.io/commit/13c9105c8a46ff495768eae365b6f99946caa7d6))
+
 # [1.0.0-alpha.2](https://github.com/aaronginder/aaronginder.github.io/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2024-08-25)
 
 
