@@ -36526,7 +36526,7 @@ A.G_.prototype={
 I(a){var s,r=null,q="Value YoY",p="Followers",o="Certifications",n="Years Experience",m=t.w
 m=A.b1(a,r,m).w.a.a<=700||A.b1(a,r,m).w.a.a<1200
 s=t.p
-return new A.cM(B.d_,m?A.fw(A.a([A.eh(A.a([new A.hY(new A.hE(1,"M+",r),q,r),new A.hY(new A.hE(1000,"+",r),p,r)],s),B.K,B.et,B.D),B.vW,A.eh(A.a([new A.hY(new A.hE(3,"",r),o,r),new A.hY(new A.hE(6,"+",r),n,r)],s),B.K,B.et,B.D)],s),B.K,B.M,B.D):A.eh(A.a([new A.hY(new A.hE(1,"M+",r),q,r),new A.hY(new A.hE(1000,"+",r),p,r),new A.hY(new A.hE(3,"+",r),o,r),new A.hY(new A.hE(6,"+",r),n,r)],s),B.K,B.et,B.D),r)}}
+return new A.cM(B.d_,m?A.fw(A.a([A.eh(A.a([new A.hY(new A.hE(1,"M+",r),q,r),new A.hY(new A.hE(1000,"+",r),p,r)],s),B.K,B.et,B.D),B.vW,A.eh(A.a([new A.hY(new A.hE(3,"",r),o,r),new A.hY(new A.hE(6,"+",r),n,r)],s),B.K,B.et,B.D)],s),B.K,B.M,B.D):A.eh(A.a([new A.hY(new A.hE(1,"M+",r),q,r),new A.hY(new A.hE(1000,"+",r),p,r),new A.hY(new A.hE(3,"",r),o,r),new A.hY(new A.hE(6,"+",r),n,r)],s),B.K,B.et,B.D),r)}}
 A.G1.prototype={
 I(a){var s=null,r=t.w,q=A.b1(a,s,r).w.a.a<=500?2.5:3,p=A.aAA(s,s,new A.ph("assets/images/bg2.jpeg",s,s)),o=A.fx(s,s,B.v,A.a3(168,25,25,35),s,s,s,s,s,s,s,s,s),n=t.p,m=A.a([A.eh(A.a([A.cb("Welcome to my Portfolio! ",s,s,A.b1(a,s,r).w.a.a>=1200?A.a1(a).p2.b.KW(B.i,B.aS):A.a1(a).p2.f.KW(B.i,B.aS),s)],n),B.K,B.M,B.D)],n)
 if(A.b1(a,s,r).w.a.a<=700)m.push(B.Mu)
