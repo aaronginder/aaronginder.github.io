@@ -1,7 +1,3 @@
-# Portfolio of Aaron Ginder
-
-Welcome to my Portfolio!
-
-I am working on it at the moment... Check back in a couple days! 
-
+# aaronginder-portfolio
+Secure repository of the code used to create my personal portfolio. This repository deploys to GitHub pages in https://github.com/aaronginder/aaronginder.github.io repository.
 
