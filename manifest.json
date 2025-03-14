@@ -1,0 +1,23 @@
+{
+    "name": "Aaron Ginder Portfolio",
+    "short_name": "AG Portfolio",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#111827",
+    "theme_color": "#ff7e50",
+    "description": "Personal portfolio of Aaron Ginder, featuring data engineering and software development projects.",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
